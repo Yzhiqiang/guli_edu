@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common_utils/common_utils.iml" filepath="$PROJECT_DIR$/common/common_utils/common_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guli_parent.iml" filepath="$PROJECT_DIR$/guli_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/service-edu/service-edu.iml" filepath="$PROJECT_DIR$/service/service-edu/service-edu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/service_base/service_base.iml" filepath="$PROJECT_DIR$/common/service_base/service_base.iml" />
+    </modules>
+  </component>
+</project>
