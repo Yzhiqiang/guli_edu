@@ -1,3 +1,13 @@
 # 微服务项目
 ## 统一返回结果对象
 在实际中可能有多人开发项目，每个人的习惯不一样，前端解析数据非常不方便，所以统一返回数据格式
+
+> @RequestBody   使用json对象接收数据，把json数据分装到对应对象里面，如果使用它，需要将提交方式改成Post方式
+> @ResponseBody  返回json对象
+
+##日志
+日志记录器（Logger）的行为是分等级的。如下表所示：
+
+分为：OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL
+
+默认情况下，spring boot从控制台打印出来的日志级别只有INFO及以上级别，可以配置日志级别
