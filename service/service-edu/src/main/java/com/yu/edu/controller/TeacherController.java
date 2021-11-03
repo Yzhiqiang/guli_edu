@@ -31,6 +31,7 @@ import java.util.List;
 @Api(value = "讲师列表")
 @RestController
 @RequestMapping("/edu/teacher")
+@CrossOrigin
 public class TeacherController {
 
     @Autowired
@@ -95,6 +96,7 @@ public class TeacherController {
         if (!StringUtils.isEmpty(end)) {
             queryWrapper.le("gmt_create", end);
         }
+        queryWrapper.orderByDesc("gmt_create");
         teacherService.page(teacherPage, queryWrapper);
 
         long total = teacherPage.getTotal();
@@ -112,13 +114,6 @@ public class TeacherController {
     @ApiOperation("根据讲师ID进行查询")
     @GetMapping("getTeacher/{id}")
     public R getTeacher(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable String id) {
-        try
-        {
-            int v = 10 / 0;
-        }catch (Exception e) {
-            throw new GuliException(20001, "执行了自定义异常处理");
-        }
-
         Teacher teacher = teacherService.getById(id);
         return R.ok().data("teacher", teacher);
     }

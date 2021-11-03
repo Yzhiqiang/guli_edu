@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="service_oss" />
+        <module name="service-edu" />
         <module name="common_utils" />
         <module name="service_base" />
-        <module name="service-edu" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="service" target="8" />
       <module name="service-edu" target="8" />
       <module name="service_base" target="8" />
+      <module name="service_oss" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -29,6 +31,7 @@
       <module name="service" options="-parameters" />
       <module name="service-edu" options="-parameters" />
       <module name="service_base" options="-parameters" />
+      <module name="service_oss" options="-parameters" />
     </option>
   </component>
 </project>
