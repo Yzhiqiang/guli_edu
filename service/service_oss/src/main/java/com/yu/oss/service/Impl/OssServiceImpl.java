@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.UUID;
 
 /**
@@ -39,6 +40,7 @@ public class OssServiceImpl implements OssService {
 
         //将文件按日期分类
         String datePath = new DateTime().toString("yyyy/MM/dd");
+
 
         filename = datePath + "/" + filename;
         try {
