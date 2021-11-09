@@ -32,3 +32,25 @@
 
 3.课程分类列表
 （1）树形结构显示
+
+##项目第七天
+nginx的功能：
+* 请求转发
+* 负载均衡
+* 动静分离
+
+1.什么是请求转发，类似以前的电话接线员
+![img.png](img.png)
+2.什么是负载均衡，nginx把请求平均分配到不同的服务器中
+3.什么是动静分离，当判断访问的资源是java代码时，就会去请求tomcat服务器，当判断访问的资源是图片，界面时，就会去请求静态服务器
+
+##EasyExcel
+使用步骤：
+* 引入easyexcel依赖
+```xml
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>easyexcel</artifactId>
+    <version>2.1.1</version>
+</dependency>
+```
