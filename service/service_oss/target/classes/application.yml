@@ -1,0 +1,15 @@
+#????
+server:
+  port: 8002
+spring:
+  application:
+    name: service-oss
+  profiles:
+    active: dev
+
+
+OSS:
+  endpoint: oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI5tEawQ7krqZzuj2K6YXs
+  accessKeySecret: 4Rt948uQZUtydwF2Qn5PerFGViFtZi
+  bucketName: edu0010
