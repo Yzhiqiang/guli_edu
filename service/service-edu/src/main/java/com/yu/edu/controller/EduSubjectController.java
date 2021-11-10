@@ -2,6 +2,7 @@ package com.yu.edu.controller;
 
 
 import com.yu.commonUtils.R;
+import com.yu.edu.entity.subject.OneSubject;
 import com.yu.edu.service.EduSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +34,12 @@ public class EduSubjectController {
         //上传过来excel文件
         subjectService.saveSubject(file,subjectService);
         return R.ok();
+    }
+
+    @GetMapping("getAll")
+    public R getAllSubject() {
+        List<OneSubject> subjects = subjectService.getAllSubjects();
+        return R.ok().data("list", subjects);
     }
 
 
