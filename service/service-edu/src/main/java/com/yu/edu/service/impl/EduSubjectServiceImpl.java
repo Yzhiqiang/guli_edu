@@ -65,7 +65,7 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
                     twoSubjects.add(twoSubject);
                 }
             }
-            oneSubject.setTwoSubjects(twoSubjects);
+            oneSubject.setChildren(twoSubjects);
             /**
              * 自己实现
              */

@@ -28,7 +28,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
     //添加课程基本信息
     @Override
-    public void addCourseInfo(CourseInfoVo courseInfoVo) {
+    public String addCourseInfo(CourseInfoVo courseInfoVo) {
         //1.向课程表添加课程基本信息
         //CourseInfoVo对象转换为eduCourse
         Course course = new Course();
@@ -47,5 +47,32 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         courseDescription.setDescription(courseInfoVo.getDescription());
         courseDescription.setId(cid);
         courseDescriptionService.save(courseDescription);
+        return cid;
+    }
+
+    @Override
+    public CourseInfoVo getCourseInfo(String courseId) {
+        Course course = baseMapper.selectById(courseId);
+        CourseInfoVo courseInfoVo = new CourseInfoVo();
+        BeanUtils.copyProperties(course, courseInfoVo);
+
+        CourseDescription description = courseDescriptionService.getById(courseId);
+
+        courseInfoVo.setDescription(description.getDescription());
+        return courseInfoVo;
+    }
+
+    @Override
+    public void updateCourseInfo(CourseInfoVo courseInfoVo) {
+        Course course = new Course();
+        BeanUtils.copyProperties(courseInfoVo, course);
+        int flag = baseMapper.updateById(course);
+        if (flag == 0) {
+            throw new GuliException(20001, "修改课程失败");
+        }
+
+        CourseDescription courseDescription = new CourseDescription();
+        BeanUtils.copyProperties(courseInfoVo, courseDescription);
+        courseDescriptionService.updateById(courseDescription);
     }
 }

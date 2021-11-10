@@ -36,7 +36,7 @@ public class EduSubjectController {
         return R.ok();
     }
 
-    @GetMapping("getAll")
+    @GetMapping("getAllSubject")
     public R getAllSubject() {
         List<OneSubject> subjects = subjectService.getAllSubjects();
         return R.ok().data("list", subjects);
