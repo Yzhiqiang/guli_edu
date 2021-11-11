@@ -3,6 +3,7 @@ package com.yu.edu.controller;
 
 import com.yu.commonUtils.R;
 import com.yu.edu.entity.vo.CourseInfoVo;
+import com.yu.edu.entity.vo.CoursePublishVo;
 import com.yu.edu.service.CourseService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,13 +39,18 @@ public class CourseController {
         return R.ok().data("courseInfoVo", courseInfoVo);
     }
 
+    //修改课程信息
     @PostMapping("updateCourseInfo")
     public R updateCourseInfo(@RequestBody CourseInfoVo courseInfoVo) {
         courseService.updateCourseInfo(courseInfoVo);
         return R.ok();
     }
 
-
+    @GetMapping("getPublishCourseInfo/{id}")
+    public R getPublishCourseInfo(@PathVariable String id) {
+        CoursePublishVo coursePublishVo = courseService.getPublicCourseInfo(id);
+        return R.ok().data("publishCourse", coursePublishVo);
+    }
 
 
 }

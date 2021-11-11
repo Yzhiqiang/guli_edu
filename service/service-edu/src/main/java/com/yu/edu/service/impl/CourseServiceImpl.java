@@ -3,6 +3,7 @@ package com.yu.edu.service.impl;
 import com.yu.edu.entity.Course;
 import com.yu.edu.entity.CourseDescription;
 import com.yu.edu.entity.vo.CourseInfoVo;
+import com.yu.edu.entity.vo.CoursePublishVo;
 import com.yu.edu.exceptionhandler.GuliException;
 import com.yu.edu.mapper.CourseMapper;
 import com.yu.edu.service.CourseDescriptionService;
@@ -74,5 +75,11 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         CourseDescription courseDescription = new CourseDescription();
         BeanUtils.copyProperties(courseInfoVo, courseDescription);
         courseDescriptionService.updateById(courseDescription);
+    }
+
+    @Override
+    public CoursePublishVo getPublicCourseInfo(String id) {
+        CoursePublishVo publishCourseInfo = baseMapper.getPublishCourseInfo(id);
+        return publishCourseInfo;
     }
 }

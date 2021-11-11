@@ -49,8 +49,8 @@ public class ChapterController {
         return R.ok();
     }
 
-    @PostMapping("{chapterId}")
-    public R addChapter(@PathVariable String chapterId) {
+    @DeleteMapping("{chapterId}")
+    public R deleteChapter(@PathVariable String chapterId) {
         Boolean flag = chapterService.deleteChapter(chapterId);
         if (flag) {
             return R.ok();
