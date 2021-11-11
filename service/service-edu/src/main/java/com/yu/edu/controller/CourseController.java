@@ -2,12 +2,15 @@ package com.yu.edu.controller;
 
 
 import com.yu.commonUtils.R;
+import com.yu.edu.entity.Course;
 import com.yu.edu.entity.vo.CourseInfoVo;
 import com.yu.edu.entity.vo.CoursePublishVo;
 import com.yu.edu.service.CourseService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -52,6 +55,18 @@ public class CourseController {
         return R.ok().data("publishCourse", coursePublishVo);
     }
 
+    @PostMapping("publishCourse/{id}")
+    public R publishCourse(@PathVariable String id) {
+        Course course = courseService.getById(id);
+        course.setStatus("Normal");
+        courseService.updateById(course);
+        return R.ok();
+    }
 
+    @GetMapping()
+    public R getCourseList() {
+        List<Course> courseList = courseService.list(null);
+        return R.ok().data("list", courseList);
+    }
 }
 
