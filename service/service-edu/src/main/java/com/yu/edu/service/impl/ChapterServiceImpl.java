@@ -79,4 +79,11 @@ public class ChapterServiceImpl extends ServiceImpl<ChapterMapper, Chapter> impl
             throw new GuliException(20001, "该章节中有若干小节，不能删除");
         }
     }
+
+    @Override
+    public void removeChapterByCourseId(String courseId) {
+        QueryWrapper<Chapter> wrapper = new QueryWrapper<>();
+        wrapper.eq("course_id", courseId);
+        baseMapper.delete(wrapper);
+    }
 }

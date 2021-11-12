@@ -68,5 +68,11 @@ public class CourseController {
         List<Course> courseList = courseService.list(null);
         return R.ok().data("list", courseList);
     }
+
+    @DeleteMapping("{courseId}")
+    public R deleteCourse(@PathVariable String courseId) {
+        courseService.removeCourse(courseId);
+        return R.ok();
+    }
 }
 
