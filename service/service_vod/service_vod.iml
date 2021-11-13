@@ -46,7 +46,7 @@
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-sts:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-ecs:4.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-vod:2.15.2" level="project" />
-    <orderEntry type="library" name="Maven: com.aliyun:aliyun-sdk-vod-upload:1.4.11" level="project" />
+    <orderEntry type="library" name="Maven: com.aliyun:aliyun-sdk-vod-upload:1.4.14" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.28" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20170516" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.2" level="project" />
