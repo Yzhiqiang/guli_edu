@@ -2,6 +2,7 @@ package com.yu.edu.utils;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * @Author:Yuzhiqiang
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @Date: Create in 16:03 2021/11/13
  * @Modified By:
  */
+@Component
 public class ConstantVodUtils implements InitializingBean {
 
     @Value("${aliyun.vod.file.keyid}")

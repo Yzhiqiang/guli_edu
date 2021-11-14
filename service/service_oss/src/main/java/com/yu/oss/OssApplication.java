@@ -3,6 +3,7 @@ package com.yu.oss;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @Date: Create in 21:15 2021/11/2
  * @Modified By:
  */
+@EnableDiscoveryClient    //将服务注册到注册中心
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)   //让数据源不自动配置
 @ComponentScan(basePackages = {"com.yu"})
 public class OssApplication {

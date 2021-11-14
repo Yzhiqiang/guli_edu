@@ -6,6 +6,10 @@ spring:
     name: service-oss
   profiles:
     active: dev
+  cloud:     //注册中心的位置
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
 
 OSS:
