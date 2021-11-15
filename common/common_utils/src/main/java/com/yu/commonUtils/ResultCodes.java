@@ -8,5 +8,5 @@ package com.yu.commonUtils;
  */
 public class ResultCodes {
     public static final Integer SUCCESS = 20000;
-    public static final Integer ERROR = 20000;
+    public static final Integer ERROR = 20001;
 }

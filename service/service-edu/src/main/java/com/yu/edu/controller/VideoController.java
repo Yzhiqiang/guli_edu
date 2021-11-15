@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yu.commonUtils.R;
 import com.yu.edu.client.VodClient;
 import com.yu.edu.entity.Video;
+import com.yu.edu.exceptionhandler.GuliException;
 import com.yu.edu.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -41,8 +42,12 @@ public class VideoController {
     public R deleteVideo(@PathVariable String id) {
         Video video = videoService.getById(id);
         String videoSourceId = video.getVideoSourceId();
-        if(!StringUtils.isEmpty(videoSourceId))
-            vodClient.removeAlyVideo(videoSourceId);    //远程调用实现调用
+        if(!StringUtils.isEmpty(videoSourceId)) {
+            R result = vodClient.removeAlyVideo(videoSourceId);//远程调用实现调用
+            if (result.getCode() == 20001) {
+                throw new GuliException(20001, "删除视频失败");
+            }
+        }
         videoService.removeById(id);
         return R.ok();
     }

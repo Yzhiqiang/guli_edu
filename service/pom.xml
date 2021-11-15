@@ -15,6 +15,8 @@
         <module>service-edu</module>
         <module>service_oss</module>
         <module>service_vod</module>
+        <module>service_cms</module>
+        <module>service_acl</module>
     </modules>
 
 
@@ -30,15 +32,15 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;hystrix依赖，主要是用 @HystrixCommand &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+        </dependency>
+        <!--hystrix依赖，主要是用 @HystrixCommand -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
         <!--服务注册-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

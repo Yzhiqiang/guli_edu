@@ -4,6 +4,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/service/service_acl/pom.xml" />
+        <option value="$PROJECT_DIR$/service/service_cms/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

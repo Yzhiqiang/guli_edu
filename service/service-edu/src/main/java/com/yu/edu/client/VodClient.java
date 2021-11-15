@@ -16,7 +16,7 @@ import java.util.List;
  * @Modified By:
  */
 @Component
-@FeignClient("service-vod")   //根据服务名称远程调用，相当于为接口创建实现类
+@FeignClient(name = "service-vod", fallback = VodFileDegradeFeignClient.class)   //根据服务名称远程调用，相当于为接口创建实现类
 public interface VodClient {
     @DeleteMapping("/eduvod/video/removeAlyVideo/{id}")
     public R removeAlyVideo (@PathVariable("id") String id);    //此处一定要指定参数的名称
