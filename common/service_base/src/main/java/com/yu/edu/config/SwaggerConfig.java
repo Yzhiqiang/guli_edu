@@ -1,4 +1,4 @@
-package com.yu.edu;
+package com.yu.edu.config;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;

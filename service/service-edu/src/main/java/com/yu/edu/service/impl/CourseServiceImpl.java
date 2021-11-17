@@ -1,5 +1,6 @@
 package com.yu.edu.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yu.edu.entity.Course;
 import com.yu.edu.entity.CourseDescription;
 import com.yu.edu.entity.vo.CourseInfoVo;
@@ -13,7 +14,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yu.edu.service.VideoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -104,5 +108,15 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         if (result == 0) {
             throw new GuliException(20001, "删除课程失败");
         }
+    }
+
+    @Cacheable(key = "'course'", value = "courseList")
+    @Override
+    public List<Course> indexCourse() {
+        QueryWrapper<Course> wrapper = new QueryWrapper();
+        wrapper.orderByDesc("id");
+        wrapper.last("limit 8");
+        List<Course> courseList = baseMapper.selectList(wrapper);
+        return courseList;
     }
 }
