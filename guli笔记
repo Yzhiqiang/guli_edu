@@ -144,3 +144,11 @@ cookie是一个客户端技术
 
 ##Auth2
 ![img_1.png](img_1.png)
+
+##微信登陆
+一：扫描之后会执行本地的callback方法，在callback中获取两个值（state， code临时票据）
+二：拿着第一部的code重定向到一个地址，获取（access_token（访问凭证）, openid(每个微信的标识)）
+三：拿着第二部的两个值再去请求一个地址就会获取微信扫描人的信息
+> 技术点
+> httpclient
+> json转换工具  （fastjson， gson jackson）
