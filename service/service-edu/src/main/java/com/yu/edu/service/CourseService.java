@@ -1,11 +1,14 @@
 package com.yu.edu.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yu.edu.entity.Course;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.yu.edu.entity.frontvo.CourseFrontVo;
 import com.yu.edu.entity.vo.CourseInfoVo;
 import com.yu.edu.entity.vo.CoursePublishVo;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -28,4 +31,6 @@ public interface CourseService extends IService<Course> {
     void removeCourse(String courseId);
 
     List<Course> indexCourse();
+
+    Map<String, Object> getCourseFrontList(Page<Course> coursePage, CourseFrontVo coursefrontvo);
 }

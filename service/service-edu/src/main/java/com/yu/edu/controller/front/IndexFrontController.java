@@ -1,4 +1,4 @@
-package com.yu.edu.controller;
+package com.yu.edu.controller.front;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yu.commonUtils.R;

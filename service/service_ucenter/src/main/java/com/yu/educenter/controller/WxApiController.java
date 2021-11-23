@@ -54,11 +54,9 @@ public class WxApiController {
             String openid = (String) map.get("openid");
             String access_token = (String) map.get("access_token");
 
-
-            Integer count = memberService.getOpenIdMember(openid);
-
+            UcenterMember member = memberService.getOpenIdMember(openid);
             //将扫描人信息添加数据库里面
-            if(count == 0) {
+            if(member == null) {
                 //3 拿着得到的access_token 和 openid，再去请求微信提供固定的地址，获取到扫描人信息
                 String baseUserInfoUrl = "https://api.weixin.qq.com/sns/userinfo" +
                         "?access_token=%s" +
@@ -76,18 +74,16 @@ public class WxApiController {
                 //获取返回userinfo字符串扫描人信息
                 String nickname = (String) userInfoMap.get("nickname");
                 String headimgUrl = (String) userInfoMap.get("headimgurl");
-                UcenterMember member = new UcenterMember();
                 member.setOpenid(openid);
                 member.setNickname(nickname);
                 member.setAvatar(headimgUrl);
                 memberService.save(member);
-                String jwtToken = JwtUtils.getJwtToken(member.getId(), member.getNickname());
-                return "redirect://http://localhost:3000?token="+jwtToken;
             }
+            String jwtToken = JwtUtils.getJwtToken(member.getId(), member.getNickname());
+            return "redirect://localhost:3000?token="+jwtToken;
         }catch(Exception e) {
             throw new GuliException(20001, "登录失败");
         }
-        return null;
     }
     //生成微信扫描的二维码
     @GetMapping("login")

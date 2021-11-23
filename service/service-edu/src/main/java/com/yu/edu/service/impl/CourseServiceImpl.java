@@ -1,8 +1,13 @@
 package com.yu.edu.service.impl;
 
+import com.alibaba.excel.util.StringUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yu.edu.entity.Course;
 import com.yu.edu.entity.CourseDescription;
+import com.yu.edu.entity.EduTeacher;
+import com.yu.edu.entity.frontvo.CourseFrontVo;
 import com.yu.edu.entity.vo.CourseInfoVo;
 import com.yu.edu.entity.vo.CoursePublishVo;
 import com.yu.edu.exceptionhandler.GuliException;
@@ -17,7 +22,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -118,5 +125,48 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         wrapper.last("limit 8");
         List<Course> courseList = baseMapper.selectList(wrapper);
         return courseList;
+    }
+
+    @Override
+    public Map<String, Object> getCourseFrontList(Page<Course> pageParam, CourseFrontVo coursefrontvo) {
+        QueryWrapper<Course> wrapper = new QueryWrapper<>();
+
+        if(!StringUtils.isEmpty(coursefrontvo.getSubjectParentId())) {
+            wrapper.eq("subject_parent_id", coursefrontvo.getSubjectParentId());
+        }
+        if(!StringUtils.isEmpty(coursefrontvo.getSubjectId())) {
+            wrapper.eq("subject_id", coursefrontvo.getSubjectId());
+        }
+        if(!StringUtils.isEmpty(coursefrontvo.getBuyCountSort())) {
+            wrapper.orderByDesc("buy_count", coursefrontvo.getBuyCountSort());
+        }
+        if(!StringUtils.isEmpty(coursefrontvo.getGmtCreateSort())) {
+            wrapper.orderByDesc("gmt_create", coursefrontvo.getGmtCreateSort());
+        }
+        if(!StringUtils.isEmpty(coursefrontvo.getPriceSort())) {
+            wrapper.orderByDesc("price", coursefrontvo.getPriceSort());
+        }
+
+        baseMapper.selectPage(pageParam, wrapper);
+
+        List<Course> records = pageParam.getRecords();
+        long current = pageParam.getCurrent();
+        long pages = pageParam.getPages();
+        long size = pageParam.getSize();
+        long total = pageParam.getTotal();
+
+        boolean hasNext = pageParam.hasNext();
+        boolean hasPrevious = pageParam.hasPrevious();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("items", records);
+        map.put("current", current);
+        map.put("pages", pages);
+        map.put("size", size);
+        map.put("total", total);
+        map.put("hasNext", hasNext);
+        map.put("hasPrevious", hasPrevious);
+
+        return map;
     }
 }
