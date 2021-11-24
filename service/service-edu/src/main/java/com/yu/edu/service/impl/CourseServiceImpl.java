@@ -8,6 +8,7 @@ import com.yu.edu.entity.Course;
 import com.yu.edu.entity.CourseDescription;
 import com.yu.edu.entity.EduTeacher;
 import com.yu.edu.entity.frontvo.CourseFrontVo;
+import com.yu.edu.entity.frontvo.CourseWebvo;
 import com.yu.edu.entity.vo.CourseInfoVo;
 import com.yu.edu.entity.vo.CoursePublishVo;
 import com.yu.edu.exceptionhandler.GuliException;
@@ -168,5 +169,10 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         map.put("hasPrevious", hasPrevious);
 
         return map;
+    }
+
+    @Override
+    public CourseWebvo getBaseCourseInfo(String courseId) {
+        return baseMapper.getBaseCourseInfo(courseId);
     }
 }

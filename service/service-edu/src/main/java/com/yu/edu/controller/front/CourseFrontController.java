@@ -7,6 +7,7 @@ import com.yu.edu.entity.Course;
 import com.yu.edu.entity.EduTeacher;
 import com.yu.edu.entity.chapter.ChapterVo;
 import com.yu.edu.entity.frontvo.CourseFrontVo;
+import com.yu.edu.entity.frontvo.CourseWebvo;
 import com.yu.edu.service.ChapterService;
 import com.yu.edu.service.CourseService;
 import com.yu.edu.service.EduTeacherService;
@@ -40,12 +41,14 @@ public class CourseFrontController {
         return R.ok().data(map);
     }
 
-    @GetMapping("getFrontCourseInfo/{courseId}")
+    @GetMapping("getFrontCourseInfo/{courseid}")
     public R getFrontCourseInfo(@PathVariable String courseid) {
-        courseService.getBaseCourseInfo(courseid);
+        CourseWebvo courseWebvo = courseService.getBaseCourseInfo(courseid);
 
         //根据课程id查询章节、小节
-        final List<ChapterVo> chapterVideoList = chapterService.getChapterVideoByCourseId(courseid);
+        List<ChapterVo> chapterVideoList = chapterService.getChapterVideoByCourseId(courseid);
+
+        return R.ok().data("courseWebVo", courseWebvo).data("chapterVideoList", chapterVideoList);
     }
 
 

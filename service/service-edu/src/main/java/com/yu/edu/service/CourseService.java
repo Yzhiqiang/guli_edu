@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yu.edu.entity.Course;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.yu.edu.entity.frontvo.CourseFrontVo;
+import com.yu.edu.entity.frontvo.CourseWebvo;
 import com.yu.edu.entity.vo.CourseInfoVo;
 import com.yu.edu.entity.vo.CoursePublishVo;
 
@@ -33,4 +34,6 @@ public interface CourseService extends IService<Course> {
     List<Course> indexCourse();
 
     Map<String, Object> getCourseFrontList(Page<Course> coursePage, CourseFrontVo coursefrontvo);
+
+    CourseWebvo getBaseCourseInfo(String courseId);
 }
