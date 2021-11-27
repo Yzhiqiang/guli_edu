@@ -152,3 +152,10 @@ cookie是一个客户端技术
 > 技术点
 > httpclient
 > json转换工具  （fastjson， gson jackson）
+
+
+
+## 项目第16天
+![img_2.png](img_2.png)   //每天注册人数     
+(select count(*) from ucenter_member uc where DATE(uc.gmt_create)='2019-01-19';)
+可以获取改天注册的人数
