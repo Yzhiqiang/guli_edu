@@ -159,3 +159,24 @@ cookie是一个客户端技术
 ![img_2.png](img_2.png)   //每天注册人数     
 (select count(*) from ucenter_member uc where DATE(uc.gmt_create)='2019-01-19';)
 可以获取改天注册的人数
+
+
+##项目第17天
+1、cannal数据同步工具（将其他数据库中的数据同步到某个数据库）
+2、springcloud组件-springcloud-Gateway
+3、权限管理模块
+
+cannal应用场景
+一个微服务远程调用另一个微服务进行操作该数据库（耦合度高，效率低）
+创建一个和远程数据库结构相同的数据库，对本地的数据库进行修改会同步到远程的数据库中
+(修改远程库中数据库中的配置)
+![img_3.png](img_3.png)
+数据同步工具
+canal的工作原理就是把自己伪装成MySQL slave，模拟MySQL slave的交互协议向MySQL Mater发送 dump协议，
+MySQL mater收到canal发送过来的dump请求， 开始推送binary log给canal，然后canal解析binary log，
+再发送到存储目的地，比如MySQL，Kafka，Elastic Search等等。
+
+
+##网关
+客户端所有的请求，先到网关中然后根据请求进行转发，负债均衡 
+![img_4.png](img_4.png)

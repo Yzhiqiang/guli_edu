@@ -7,23 +7,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="service_oss" />
         <module name="service-edu" />
-        <module name="service_acl" />
-        <module name="service_statistics" />
         <module name="common_utils" />
-        <module name="service_vod" />
-        <module name="service_base" />
         <module name="service_msm" />
         <module name="service_order" />
         <module name="service_cms" />
+        <module name="service_oss" />
+        <module name="service_acl" />
+        <module name="service_statistics" />
+        <module name="service_vod" />
+        <module name="service_base" />
+        <module name="canal_clientedu" />
         <module name="service_ucenter" />
+        <module name="apt_gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="apt_gateway" target="1.8" />
+      <module name="canal_clientedu" target="1.8" />
       <module name="common" target="8" />
       <module name="common_utils" target="8" />
       <module name="guli_parent" target="1.8" />
+      <module name="infrastructure" target="1.8" />
       <module name="service" target="8" />
       <module name="service-edu" target="8" />
       <module name="service_acl" target="8" />
@@ -39,9 +44,12 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="apt_gateway" options="-parameters" />
+      <module name="canal_clientedu" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="common_utils" options="-parameters" />
       <module name="guli_parent" options="-parameters" />
+      <module name="infrastructure" options="-parameters" />
       <module name="service" options="-parameters" />
       <module name="service-edu" options="-parameters" />
       <module name="service_acl" options="-parameters" />

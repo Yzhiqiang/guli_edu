@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/infrastructure/apt_gateway/apt_gateway.iml" filepath="$PROJECT_DIR$/infrastructure/apt_gateway/apt_gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/canal_clientedu/canal_clientedu.iml" filepath="$PROJECT_DIR$/canal_clientedu/canal_clientedu.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common_utils/common_utils.iml" filepath="$PROJECT_DIR$/common/common_utils/common_utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/guli_parent.iml" filepath="$PROJECT_DIR$/guli_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infrastructure/infrastructure.iml" filepath="$PROJECT_DIR$/infrastructure/infrastructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service-edu/service-edu.iml" filepath="$PROJECT_DIR$/service/service-edu/service-edu.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service_acl/service_acl.iml" filepath="$PROJECT_DIR$/service/service_acl/service_acl.iml" />
