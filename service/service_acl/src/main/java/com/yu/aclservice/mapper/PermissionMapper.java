@@ -1,7 +1,7 @@
 package com.yu.aclservice.mapper;
 
-import com.yu.aclservice.entity.Permission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.yu.aclservice.entity.Permission;
 
 import java.util.List;
 

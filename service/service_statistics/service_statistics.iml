@@ -67,6 +67,14 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.2.1.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.6.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-alibaba-nacos-config:0.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-alibaba-nacos-config:0.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-client:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-common:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-api:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.28" level="project" />
+    <orderEntry type="library" name="Maven: io.prometheus:simpleclient:0.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-context:2.2.0.RELEASE" level="project" />
     <orderEntry type="module" module-name="service_base" />
     <orderEntry type="module" module-name="common_utils" />
     <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.7.0" level="project" />
@@ -88,7 +96,6 @@
     <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter:2.2.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-context:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-rsa:1.0.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.60" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.60" level="project" />
@@ -135,11 +142,6 @@
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-alibaba-nacos-discovery:0.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-alibaba-nacos-discovery:0.2.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-client:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-common:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-api:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.28" level="project" />
-    <orderEntry type="library" name="Maven: io.prometheus:simpleclient:0.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-openfeign:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-openfeign-core:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.github.openfeign.form:feign-form-spring:3.8.0" level="project" />

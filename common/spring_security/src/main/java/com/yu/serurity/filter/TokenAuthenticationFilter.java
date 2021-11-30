@@ -66,11 +66,11 @@ public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
         // token置于header里
-        String token = request.getHeader("token");
+        String token = request.getHeader("token");    //第四步，从header中取得token值，
         if (token != null && !"".equals(token.trim())) {
-            String userName = tokenManager.getUserFromToken(token);
+            String userName = tokenManager.getUserFromToken(token);     // 第五步，根据token值解析出用户名
 
-            List<String> permissionValueList = (List<String>) redisTemplate.opsForValue().get(userName);
+            List<String> permissionValueList = (List<String>) redisTemplate.opsForValue().get(userName);    //从redis中取出该用户的权限
             Collection<GrantedAuthority> authorities = new ArrayList<>();
             for(String permissionValue : permissionValueList) {
                 if(StringUtils.isEmpty(permissionValue)) continue;

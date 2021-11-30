@@ -1,4 +1,4 @@
-package com.yu.aclservice;
+package com.yu.edu;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
