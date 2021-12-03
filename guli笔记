@@ -186,3 +186,8 @@ MySQL mater收到canal发送过来的dump请求， 开始推送binary log给cana
 ![img_5.png](img_5.png)
 springsecurity 本质上就是一个过滤器filter，，对多请求的路径进行过滤
 (1) 如果是基于Session，那么Spring-security会对cookie里的sessionid进行解析，
+
+
+##第19天
+mvn clean package   打包
+java -jar ---.jar   运行jar包
