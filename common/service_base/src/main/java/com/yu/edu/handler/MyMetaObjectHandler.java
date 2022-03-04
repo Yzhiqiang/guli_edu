@@ -18,6 +18,7 @@ import java.util.Date;
  */
 @Component
 public class MyMetaObjectHandler implements MetaObjectHandler {
+
     @Override
     public void insertFill(MetaObject metaObject) {
         //参数1：对应类中的属性名称, 而不是数据库中的字段名称

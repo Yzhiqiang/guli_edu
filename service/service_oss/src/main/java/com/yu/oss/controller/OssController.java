@@ -18,9 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @RestController
 @RequestMapping("/eduoss/fileoss")
-@CrossOrigin
+//@CrossOrigin
 public class OssController {
-
     @Autowired
     OssService ossService;
     //上传头像的方法
