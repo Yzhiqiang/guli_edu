@@ -18,6 +18,7 @@ import java.util.List;
  * @author achang
  * @since 2021-11-09
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/eduservice/chapter")
 public class ChapterController {

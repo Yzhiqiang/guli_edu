@@ -70,7 +70,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
                                             Authentication auth) throws IOException, ServletException {
         SecurityUser user = (SecurityUser) auth.getPrincipal();
         String token = tokenManager.createToken(user.getCurrentUserInfo().getUsername());    //第二步，根据用户名生成token值
-        redisTemplate.opsForValue().set(user.getCurrentUserInfo().getUsername(), user.getPermissionValueList());   // 第二步，将该用户的用户名和权限存入redis中
+        redisTemplate.opsForValue().set(user.getCurrentUserInfo().getUsername(), user.getPermissionValueList());   // 第san步，将该用户的用户名和权限存入redis中
 
         ResponseUtil.out(res, R.ok().data("token", token));      //返回一个token值存入header中
     }

@@ -18,6 +18,5 @@ spring:
 
 OSS:
   endpoint: oss-cn-beijing.aliyuncs.com
-  accessKeyId: 
-  accessKeySecret: 4Rt948uQZUtydwF2Qn5PerFGViFtZi
+  accessKeyId:
   bucketName: edu0010
