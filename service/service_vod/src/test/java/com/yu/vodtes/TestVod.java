@@ -17,8 +17,6 @@ import java.util.List;
  */
 public class TestVod {
     public static void main(String[] args) {
-        String accessKeyId = "LTAI5tEawQ7krqZzuj2K6YXs";
-        String accessKeySecret = "4Rt948uQZUtydwF2Qn5PerFGViFtZi";
 
         String title = "6 - What If I Want to Move Faster.mp4--upload by sdk";
         String fileName = "E:/6 - What If I Want to Move Faster.mp4";
