@@ -41,10 +41,10 @@ public class TestVod {
     //根据视频的id获得视频的播放凭证，可以通过此方式播放加密的视频
     public static void getPlayAuth () {
         //2.获取视频的播放凭证
-        DefaultAcsClient client = InitObject.initVodClient("LTAI5tEawQ7krqZzuj2K6YXs", "4Rt948uQZUtydwF2Qn5PerFGViFtZi");
+        DefaultAcsClient client = InitObject.initVodClient("", "");
         GetVideoPlayAuthRequest request = new GetVideoPlayAuthRequest();
         GetVideoPlayAuthResponse response = new GetVideoPlayAuthResponse();
-        request.setVideoId("b29dcbe0760a488093b1ee6a0092f5ac");
+//         request.setVideoId("");
         try {
             response = client.getAcsResponse(request);
             //播放凭证
@@ -65,7 +65,7 @@ public class TestVod {
         //向request对象里面设置视频id
         GetPlayInfoRequest request = new GetPlayInfoRequest();
         GetPlayInfoResponse response = new GetPlayInfoResponse();
-        request.setVideoId("b29dcbe0760a488093b1ee6a0092f5ac");
+        request.setVideoId("");
         try {
             response = client.getAcsResponse(request);
             List<GetPlayInfoResponse.PlayInfo> playInfoList = response.getPlayInfoList();
