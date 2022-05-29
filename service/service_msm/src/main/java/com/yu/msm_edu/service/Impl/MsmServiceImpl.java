@@ -24,8 +24,6 @@ import java.util.Map;
 public class MsmServiceImpl implements MsmService {
     @Override
     public boolean send(Map<String, Object> param, String phone) {
-//        DefaultProfile profile =
-//                DefaultProfile.getProfile("default", "LTAI5tEawQ7krqZzuj2K6YXs", "4Rt948uQZUtydwF2Qn5PerFGViFtZi");
 //        IAcsClient client = new DefaultAcsClient(profile);
 //
 //        //设置相关固定的参数
@@ -57,7 +55,7 @@ public class MsmServiceImpl implements MsmService {
         try {
             email.addTo("yu_zhiqiang123@163.com");
             email.setFrom("yu_zhiqiang123@163.com","于先生");//发送人的邮箱为自己的，用户名可以随便填
-            email.setAuthentication("yu_zhiqiang123@163.com","IAQSDAHNSWBAAMBS");//设置发送人到的邮箱和用户名和授权码(授权码是自己设置的)
+            email.setAuthentication("yu_zhiqiang123@163.com","");//设置发送人到的邮箱和用户名和授权码(授权码是自己设置的)
             email.setSubject("登录验证码");//设置发送主题
             email.setMsg(phone+"   验证码如下："+param.get("code"));//设置发送内容
             email.send();//进行发送
